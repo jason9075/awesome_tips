@@ -1,0 +1,20 @@
+ > [ 7/14] RUN cd gocv &&     make install &&     make clean:                                                                                                           
+#0 0.988 sudo apt-get -y update                                                                                                                                         
+#0 0.988 sudo apt-get -y install unzip wget build-essential cmake curl git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libdc1394-dev                                                                                                                           
+#0 0.989 /bin/sh: 1: sudo: not found                                                                                                                                    
+#0 0.989 /bin/sh: 2: sudo: not found
+#0 0.989 make: *** [Makefile:60: deps_ubuntu_jammy] Error 127
+------
+Dockerfile:19
+--------------------
+  18 |     RUN git clone https://github.com/hybridgroup/gocv.git
+  19 | >>> RUN cd gocv && \
+  20 | >>>     make install && \
+  21 | >>>     make clean
+  22 |     
+--------------------
+ERROR: failed to solve: process "/bin/sh -c cd gocv &&     make install &&     make clean" did not complete successfully: exit code: 2
+Running application with image...
+Unable to find image 'my-go-app-image:latest' locally
+docker: Error response from daemon: pull access denied for my-go-app-image, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+See 'docker run --help'.
