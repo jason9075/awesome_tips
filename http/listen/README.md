@@ -14,6 +14,12 @@ sudo nc -lk 8080
 
 ## socat
 
+使用 socat 來持續監聽TCP 8080端口的命令可能如下：
+
+```bash
+socat TCP-LISTEN:8080,reuseaddr,fork -
+```
+
 以下是一個基本的範例，展示了如何使用 socat 監聽8080端口，並對進來的請求回應一個簡單的HTTP頁面：
 
 ```bash
