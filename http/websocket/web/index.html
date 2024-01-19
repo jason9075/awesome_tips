@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>WebSocket Test</title>
+</head>
+
+<body>
+    <h1>WebSocket Test</h1>
+    <div id="messages"></div>
+
+    <script type="text/javascript">
+        var conn = new WebSocket('ws://localhost:8080/echo')
+        conn.onopen = function (e) {
+            console.log('Connection established!')
+        }
+
+        conn.onmessage = function (e) {
+            console.log(e.data)
+            document.getElementById('messages').innerText += e.data + '\n'
+        }
+    </script>
+</body>
+
+</html>
