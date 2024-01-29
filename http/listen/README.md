@@ -20,6 +20,10 @@ sudo nc -lk 8080
 socat TCP-LISTEN:8080,reuseaddr,fork -
 ```
 
+```bash
+socat TCP-LISTEN:8080,reuseaddr,fork - | tee output.log
+```
+
 以下是一個基本的範例，展示了如何使用 socat 監聽8080端口，並對進來的請求回應一個簡單的HTTP頁面：
 
 ```bash
